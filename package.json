@@ -7,11 +7,13 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:currency-converter": "node dist/currency-converter/server/server.mjs"
+    "serve:ssr:currency-converter": "node dist/currency-converter/server/server.mjs",
+    "format": "prettier --write \"src/**/*.{ts,js,json,css,scss,html}\""
   },
   "private": true,
   "dependencies": {
     "@angular/animations": "^18.1.0",
+    "@angular/cdk": "^18.1.4",
     "@angular/common": "^18.1.0",
     "@angular/compiler": "^18.1.0",
     "@angular/core": "^18.1.0",
@@ -39,6 +41,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
+    "prettier": "^3.3.3",
     "typescript": "~5.5.2"
   }
 }

@@ -1,0 +1,22 @@
+<div class="form-selector">
+
+  <div class="form-group">
+    <label for="selectInput">Select currency:</label>
+    <div class="select-container">
+    <app-tooltip [currencyData]="getCurrency()">
+    <img *ngIf="getSelectedFlag()" [src]="getSelectedFlag()" alt="selectedOption + ' flag'" class="flag-icon" />
+  </app-tooltip>
+    <select id="selectInput" [(ngModel)]="selectedOption" (ngModelChange)="onOptionChange($event)" class="form-control">
+      <option *ngFor="let rate of rates" [value]="rate.code">
+        {{ rate.code }}
+      </option>
+    </select>
+  </div>
+  </div>
+
+  <div class="form-group">
+    <label for="textInput">Enter amount:</label>
+    <input id="textInput" type="number" [(ngModel)]="inputValue" (ngModelChange)="onAmountChange($event)" placeholder="Enter amount..." class="form-control" />
+  </div>
+
+</div>

@@ -1,0 +1,19 @@
+<header class="header">
+  <div class="currency">
+    <img *ngIf="usdRate" [src]="usdRate.flag" alt="usd + ' flag'" class="flag-icon" />
+    <span>USD:</span>
+    <span *ngIf="usdToUah; else loading">{{ usdToUah | number:'1.2-2' }}</span>
+  </div>
+
+  <div class="header-title">
+    USENSE Currency Converter
+  </div>
+
+  <div class="currency">
+    <img *ngIf="eurRate" [src]="eurRate.flag" alt="usd + ' flag'" class="flag-icon" />
+    <span>EUR:</span>
+    <span *ngIf="eurToUah; else loading">{{ eurToUah | number:'1.2-2' }}</span>
+  </div>
+
+  <ng-template #loading>Loading...</ng-template>
+</header>
