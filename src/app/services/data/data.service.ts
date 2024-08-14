@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { combineLatest, Observable, of, ReplaySubject } from 'rxjs';
-import { tap, shareReplay, map } from 'rxjs/operators';
+import { tap, shareReplay, map, catchError, switchMap } from 'rxjs/operators';
 import { IExchangeApi } from '../../models/exchangeApi.model';
 import { environment } from '../../../environments/environment';
 import { ICurrency } from '../../models/currency.model';
@@ -14,26 +14,26 @@ import { TemporaryService } from '../temporary/temporary-service.service';
 })
 export class DataService {
 
-  private apiUrl = `https://api.exchangeratesapi.io/v1/latest?access_key=${environment.ACCESS_KEY}`;
+  private apiUrl = `https://api.exchangeratesapi555.io/v1/latest?access_key=${environment.ACCESS_KEY}`;
   private currencies$: ReplaySubject<IExchangeApi> = new ReplaySubject(1);
 
   constructor(private http: HttpClient, private currencyInfoService: CurrencyInfoService, private temporaryData: TemporaryService) {}
 
-  // getData(): Observable<IExchangeApi> {
-  //   if (this.currencies$.observers.length === 0) {
-  //     this.http.get<IExchangeApi>(this.apiUrl)
-  //       .pipe(
-  //         tap(data => this.currencies$.next(data)),
-  //         shareReplay(1)
-  //       )
-  //       .subscribe();
-  //   }
-  //   return this.currencies$.asObservable();
-  // }
-
+  getData(): Observable<IExchangeApi> {
+    return this.http.get<IExchangeApi>(this.apiUrl).pipe(
+      tap(data => this.currencies$.next(data)),
+      shareReplay(1),
+      catchError(() => {
+        return this.temporaryData.getTemporaryData(); // повертаємо дані з тимчасового сховища у разі помилки
+      })
+    );
+  }
 
   getCurrencyData(): Observable<ICurrency[]> {
-    return combineLatest([this.temporaryData.getTemporaryData(), of(this.currencyInfoService.getCurrencies())]).pipe(
+    return this.getData().pipe(
+      switchMap(exchangeData =>
+        combineLatest([of(exchangeData), of(this.currencyInfoService.getCurrencies())])
+      ),
       map(([exchangeData, currencyInfo]) => {
         return Object.keys(exchangeData.rates).map(code => {
           const info = currencyInfo.find(c => c.code === code);

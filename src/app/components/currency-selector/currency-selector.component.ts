@@ -103,6 +103,10 @@ export class CurrencySelectorComponent implements OnInit {
     return selectedRate ? selectedRate.flag : undefined;
   }
 
+  get displayValue(): string {
+    return this.inputValue === 0 ? '' : this.inputValue.toString();
+  }
+
   getCurrency(): ICurrency {
     const selectedRate = this.rates.find(rate => rate.code === this.selectedOption) ||
     {
