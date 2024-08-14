@@ -12,49 +12,6 @@ Models: Data models are used to define the structure of the data being managed b
 
 Environment Configuration: The project uses environment files to manage different configurations (e.g., API keys) for different environments (development, production).
 
-Folder Structure
-currency-converter/
-├── .angular/
-├── .vscode/
-├── node_modules/
-├── public/
-├── src/
-│   ├── app/
-│   │   ├── components/
-│   │   │   ├── currency-selector/
-│   │   │   ├── footer/
-│   │   │   ├── header/
-│   │   │   ├── tooltip/
-│   │   ├── models/
-│   │   │   ├── currency.model.ts
-│   │   │   ├── currencyInfo.model.ts
-│   │   │   ├── exchangeApi.model.ts
-│   │   ├── services/
-│   │   │   ├── currency-info/
-│   │   │   ├── data/
-│   │   │   ├── exchange/
-│   │   │   ├── temporary/
-│   │   ├── app.component.html
-│   │   ├── app.component.scss
-│   │   ├── app.component.spec.ts
-│   │   ├── app.component.ts
-│   │   ├── app.config.server.ts
-│   │   ├── app.config.ts
-│   │   ├── app.routes.ts
-│   ├── environments/
-│   ├── index.html
-│   ├── main.server.ts
-│   ├── main.ts
-│   ├── styles.scss
-├── .editorconfig
-├── .gitignore
-├── .prettierignore
-├── .prettierrc
-├── angular.json
-├── package-lock.json
-├── package.json
-└── README.md
-
 Key Directories
 components/: Contains all UI components like currency-selector, header, footer, and tooltip.
 models/: Contains TypeScript interfaces and classes that define the data structures used in the application.
