@@ -24,7 +24,8 @@ export class DataService {
       tap(data => this.currencies$.next(data)),
       shareReplay(1),
       catchError(() => {
-        return this.temporaryData.getTemporaryData(); // повертаємо дані з тимчасового сховища у разі помилки
+        console.log('ERROR to get data from API, max number of free requests');
+        return this.temporaryData.getTemporaryData();
       })
     );
   }

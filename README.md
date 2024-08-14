@@ -1,3 +1,5 @@
+Working example: https://currency-converter-1-ivory.vercel.app/
+
 The USENSE Currency Converter is a web application designed to provide users with real-time currency conversion. The application allows users to select different currencies, input an amount, and receive the equivalent amount in another selected currency. It also displays current exchange rates for USD and EUR to UAH on the header.
 
 Architecture
