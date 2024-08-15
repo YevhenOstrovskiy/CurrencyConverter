@@ -22,7 +22,6 @@ export class DataService {
   getData(): Observable<IExchangeApi> {
     return this.http.get<IExchangeApi>(this.apiUrl).pipe(
       tap(data => this.currencies$.next(data)),
-      shareReplay(1),
       catchError(() => {
         console.log('ERROR to get data from API, max number of free requests');
         return this.temporaryData.getTemporaryData();
