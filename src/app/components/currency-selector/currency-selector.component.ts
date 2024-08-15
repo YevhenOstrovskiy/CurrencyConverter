@@ -13,16 +13,16 @@ import { TooltipComponent } from '../tooltip/tooltip.component';
     CommonModule,
     TooltipComponent
   ],
-  selector: 'currency-selector',
+  selector: 'app-currency-selector',
   templateUrl: './currency-selector.component.html',
   styleUrls: ['./currency-selector.component.scss']
 })
 export class CurrencySelectorComponent implements OnInit {
-  @Input() currencyIndex: number = 1;
+  @Input() currencyIndex = 1;
 
-  inputValue: number = 0;
-  selectedOption: string = '';
-  amount: number = 0;
+  inputValue = 0;
+  selectedOption = '';
+  amount = 0;
   rates: ICurrency[] = [];
 
   constructor(private currenciesService: DataService, private exchangeService: CurrencyExchangeService) {}
@@ -94,8 +94,8 @@ export class CurrencySelectorComponent implements OnInit {
     return currency ? currency.rate : 0;
   }
 
-  formatToTwoDecimals(value: any): number {
-    return parseFloat(parseFloat(value).toFixed(2));
+  formatToTwoDecimals(value: number): number {
+    return Math.round(value * 100) / 100;
   }
 
   getSelectedFlag(): string | undefined {

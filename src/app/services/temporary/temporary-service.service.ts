@@ -187,8 +187,6 @@ export class TemporaryService {
     }
   }
 
-  constructor() { }
-
   getTemporaryData(): Observable<IExchangeApi> {
     return of(this.data);
   }

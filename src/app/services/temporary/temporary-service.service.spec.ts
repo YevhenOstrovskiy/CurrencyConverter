@@ -1,7 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 import { TemporaryService } from './temporary-service.service';
 import { IExchangeApi } from '../../models/exchangeApi.model';
-import { of } from 'rxjs';
 
 describe('TemporaryService', () => {
   let service: TemporaryService;

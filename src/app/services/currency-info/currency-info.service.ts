@@ -1107,8 +1107,6 @@ export class CurrencyInfoService {
     }
 ]
 
-  constructor() { }
-
   getCurrencies(): ICurrencyInfo[] {
     return this.currenciesInfo;
   }
