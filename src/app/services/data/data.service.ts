@@ -14,7 +14,7 @@ import { TemporaryService } from '../temporary/temporary-service.service';
 })
 export class DataService {
 
-  private apiUrl = `https://api.exchangeratesapi.io/v1/latest?access_key=${environment.ACCESS_KEY}`;
+  private apiUrl = `https://api.exchangeratesapi4444.io/v1/latest?access_key=${environment.ACCESS_KEY}`;
   private currencies$: ReplaySubject<IExchangeApi> = new ReplaySubject(1)
 
   constructor(

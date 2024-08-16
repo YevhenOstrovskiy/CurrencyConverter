@@ -1,16 +1,18 @@
+@import '../../../variables.scss';
+
 .app-footer {
   width: 100%;
-  background-color: #1a1b25;
-  color: #e0e0f5;
-  padding: 15px 30px;
+  background-color: $primary-color;
+  color: $text-secondary-color;
+  padding: $padding-y $padding-x;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-top: 2px solid #353660;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
+  border-top: $border;
+  box-shadow: $box-shadow;
   position: fixed;
   bottom: 2px;
-  border-bottom: 2px solid #353660;
+  border-bottom: $border;
 }
 
 .footer-content {
@@ -22,7 +24,7 @@
 }
 
 .footer-links a {
-  color: #b8b9d8;
+  color: $text-primary-color;
   margin-left: 15px;
   text-decoration: none;
   font-weight: bold;
@@ -32,7 +34,7 @@
   text-decoration: underline;
 }
 
-@media (max-width: 768px) {
+@media (max-width: $media-breakpoint) {
   .app-footer {
     flex-direction: column;
     align-items: center;

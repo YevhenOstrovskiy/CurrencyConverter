@@ -1,3 +1,5 @@
+@import '../../../variables.scss';
+
 .form-selector {
   margin: 20px;
   display: flex;
@@ -5,10 +7,10 @@
   justify-content: space-between;
   align-items: center;
   max-width: 500px;
-  border: 2px solid #353660;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25);
-  background-color: #1a1b25;
+  border: $border;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  background-color: $primary-color;
 }
 
 .form-group {
@@ -20,20 +22,20 @@
 
 .form-group label {
   font-weight: bold;
-  color: #b8b9d8;
+  color: $text-primary-color;
   margin-bottom: 8px;
   white-space: nowrap;
 }
 
 .form-control {
   padding: 10px;
-  font-size: 16px;
-  border: 2px solid #353660;
-  border-radius: 8px;
+  font-size: $font-size-sm;
+  border: $border;
+  border-radius: $border-radius;
   box-sizing: border-box;
   max-width: 140px;
-  background-color: #28293e;
-  color: #b8b9d8;
+  background-color: $background-color;
+  color: $text-primary-color;
 }
 
 input.form-control, select.form-control {
@@ -42,14 +44,14 @@ input.form-control, select.form-control {
 
 .amount-display {
   padding: 10px;
-  font-size: 16px;
-  border: 2px solid #353660;
-  border-radius: 8px;
+  font-size: $font-size-sm;
+  border: $border;
+  border-radius: $border-radius;
   box-sizing: border-box;
   text-align: center;
   width: 100px;
-  background-color: #28293e;
-  color: #b8b9d8;
+  background-color: $secondary-color;
+  color: $text-primary-color;
 }
 
 .flag-icon {
@@ -58,7 +60,7 @@ input.form-control, select.form-control {
   margin-right: 8px;
   vertical-align: middle;
   border-radius: 50%;
-  border: 1px solid #353660;
+  border: $border;
 }
 
 .select-container {
@@ -69,12 +71,12 @@ input.form-control, select.form-control {
 }
 
 select.form-control {
-  padding-left: 15px;
+  padding-left: $padding-y;
 }
 
 select.form-control option {
-  background-color: #28293e;
-  color: #b8b9d8;
+  background-color: $background-color;
+  color: $text-primary-color;
 }
 
 input[type="number"]::-webkit-outer-spin-button,
