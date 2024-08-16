@@ -1,4 +1,4 @@
-@import '../../../variables.scss';
+@import '../../styles/main.scss';
 
 .header {
   display: flex;
@@ -44,7 +44,7 @@
   text-transform: uppercase;
 }
 
-@media (max-width: 768px) {
+@include on-tablet {
   .header {
     flex-direction: column;
     align-items: center;
@@ -61,5 +61,7 @@
     transform: none;
     margin-bottom: 15px;
     font-size: $font-size-md;
+    order: -1;
   }
+
 }

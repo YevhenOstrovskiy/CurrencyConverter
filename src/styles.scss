@@ -1,4 +1,4 @@
-@import './variables.scss';
+@import './app/styles/main.scss';
 
 html, body {
   margin: 0;
@@ -18,14 +18,14 @@ app-root {
   border-radius: $border-radius;
 }
 
-@media (max-width: $media-breakpoint) {
+@include on-tablet {
   app-root {
     padding: $padding-y;
     box-shadow: none;
   }
 }
 
-@media (min-width: 769px) and (max-width: $media-breakpoint-max) {
+@include on-desktop {
   app-root {
     padding: 20px;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
